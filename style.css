@@ -58,7 +58,7 @@ code {
 }
 
 #tiles {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600;
     padding:1px;
     margin:1px;
@@ -77,6 +77,6 @@ code {
     border: 1px solid #E4C59E;
     background: #AF8260;
     color: black;
-    font-size: 12px;
+    font-size: 16px;
     z-index: 2;
 }

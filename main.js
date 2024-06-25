@@ -1,129 +1,5 @@
 import './style.css'
 
-// Creating board structure
-document.querySelector('#board').innerHTML = `
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-    <div id="row">
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-        <div id="tiles"></div>
-    </div>
-`
-
 // Numbering all tiles
 
 let counter = 1;
@@ -148,7 +24,6 @@ function createPlayer(data){
     const c = document.createElement('span')
     c.setAttribute('id', 'player')
     c.innerText = data
-    console.log(c)
     return c
 }
 
@@ -166,11 +41,11 @@ function resetBoard(board, player1, player2){
 
 }
 
-console.log(document.querySelector('body'))
 document.querySelector('body').addEventListener("keydown", function (e) {
     if(e.key != " ") return;
     newIdx = 1 + Math.floor(Math.random() * 10) % 6;
-    if(flag){
+    flag = !flag
+    if(!flag){
         if(newIdx + p1idx >= 100) return;
         board[newIdx + p1idx].appendChild(player1.parentNode.removeChild(player1))
         p1idx += newIdx
@@ -178,7 +53,7 @@ document.querySelector('body').addEventListener("keydown", function (e) {
         if(newIdx + p2idx >= 100) return;
         board[newIdx + p2idx].appendChild(player2.parentNode.removeChild(player2))
         p2idx += newIdx
-    }   flag = !flag
+    }   
     if(p1idx == 99 || p2idx == 99){
         board[99].style.background = '#ACD793'
     }
