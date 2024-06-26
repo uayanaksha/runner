@@ -39,6 +39,14 @@ code {
     text-align: center;
 }
 
+#title {
+    font-family: NovaMono;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 4px auto; 
+    margin: 4px auto; 
+}
+
 #board {
     display: flex;
     flex-direction: column-reverse;
@@ -79,4 +87,9 @@ code {
     color: black;
     font-size: 16px;
     z-index: 2;
+}
+
+.databox {
+    margin: 4px auto;
+    padding: 4px auto;
 }
