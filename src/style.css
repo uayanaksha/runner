@@ -80,7 +80,7 @@ code {
     justify-content: space-evenly;
 }
 
-#player {
+.player {
     position: relative;
     border: 1px solid #E4C59E;
     background: #AF8260;

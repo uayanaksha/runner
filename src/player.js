@@ -1,7 +1,8 @@
 export default class Player{
     constructor(name){
         const c = document.createElement('span')
-        c.setAttribute('id', 'player')
+        c.setAttribute('id', `player-${name}`)
+        c.setAttribute('class', `player`)
         c.innerText = name
         this.idx = 0
         this.ptr = c
